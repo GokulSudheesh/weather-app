@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import counterReducer from '@/redux/slices/counter';
-import { ricknmortyApi } from '@/redux/services/ricknmorty';
+import { openWeatherApi } from './services/openWeather';
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    [ricknmortyApi.reducerPath]: ricknmortyApi.reducer,
+    [openWeatherApi.reducerPath]: openWeatherApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(ricknmortyApi.middleware),
+    getDefaultMiddleware().concat(openWeatherApi.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
