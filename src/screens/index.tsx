@@ -54,13 +54,8 @@ const style = StyleSheet.create({
   container: {
     marginTop: StatusBar.currentHeight || 0,
     flex: 1,
-    // alignItems: 'center',
-    // justifyContent: 'center',
   },
   spinner: {
-    // alignSelf: 'center',
-    // justifyContent: 'center',
     height: '100%',
-    // marginVertical: 'auto',
   },
 });

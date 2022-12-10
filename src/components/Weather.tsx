@@ -23,6 +23,5 @@ export default Weather;
 const style = StyleSheet.create({
   container: {
     paddingHorizontal: 20,
-    // marginBottom: 'auto',
   },
 });

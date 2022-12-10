@@ -37,17 +37,10 @@ const Header = ({
 export default Header;
 
 const style = StyleSheet.create({
-  container: {
-    // width: '100%',
-    // paddingHorizontal: 40,
-  },
+  container: {},
   header: {
-    // flex: 1,
-    // width: '100%',
     flexDirection: 'row',
     alignItems: 'center',
-    // gap: 200,
-    // paddingHorizontal: 40,
     justifyContent: 'space-between',
   },
   title: {
