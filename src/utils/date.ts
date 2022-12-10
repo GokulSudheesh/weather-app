@@ -1,6 +1,17 @@
-export const get12HrTime = (time: Date): string => {
+export const get12HrTime = (
+  time: Date,
+  options: { showMinutes: boolean }
+): string => {
   const hours = time.getHours();
-  return `${hours % 12 || 12} ${hours >= 12 ? 'PM' : 'AM'}`;
+  const ampm = hours >= 12 ? 'PM' : 'AM';
+  if (!options.showMinutes) {
+    return `${hours % 12 || 12} ${ampm}`;
+  } else {
+    const minutes = time.getMinutes();
+    return `${hours % 12 || 12}:${
+      minutes < 10 ? '0' + minutes : minutes
+    } ${ampm}`;
+  }
 };
 
 export const getDayOfTheWeek = (time: Date): string => {

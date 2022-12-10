@@ -12,7 +12,9 @@ import { get12HrTime } from '@/utils/date';
 const TempCard = ({ data }: { data: Current }) => {
   return (
     <View style={style.tempCard}>
-      <Text>{get12HrTime(new Date(data.dt * 1000))}</Text>
+      <Text>
+        {get12HrTime(new Date(data.dt * 1000), { showMinutes: false })}
+      </Text>
       <WeatherIcon width={50} height={50} icon={data.weather[0].icon} />
       <Text style={style.tempText}>{roundTemp(data.temp)}</Text>
       <View style={style.rainDrop}>

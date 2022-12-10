@@ -3,6 +3,7 @@ import React from 'react';
 import Header from './Header';
 import HourlyTemp from './HourlyTemp';
 import DailyTemp from './DailyTemp';
+import Sunrise from './Sunrise';
 import { OpenWeatherAPIResponse } from '@/interfaces/openWeatherResponse.interface';
 import { LocationGeocodedAddress } from 'expo-location';
 
@@ -18,6 +19,7 @@ const Weather = ({
       <Header data={data} address={address} />
       <HourlyTemp data={data.hourly} />
       <DailyTemp data={data.daily} />
+      <Sunrise data={data} />
     </ScrollView>
   );
 };
