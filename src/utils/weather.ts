@@ -25,3 +25,6 @@ export const getOpenWeatherIcon = (icon: string) =>
   `http://openweathermap.org/img/wn/${icon}@2x.png`;
 
 export const roundTemp = (temp: number): string => `${Math.round(temp)}°`;
+
+export const getRainProb = (prob?: number): string =>
+  prob ? `${prob * 100}%` : '0%';

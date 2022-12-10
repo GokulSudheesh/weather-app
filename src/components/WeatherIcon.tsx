@@ -8,12 +8,13 @@ interface WeatherIconProps {
   width: number;
   height: number;
   icon: Icon;
+  showLottie?: boolean;
 }
 
-const WeatherIcon = ({ width, height, icon }: WeatherIconProps) => {
+const WeatherIcon = ({ width, height, icon, showLottie }: WeatherIconProps) => {
   return (
     <>
-      {WeatherIconLotties[icon] ? (
+      {showLottie && WeatherIconLotties[icon] ? (
         <LottieView
           autoPlay
           loop

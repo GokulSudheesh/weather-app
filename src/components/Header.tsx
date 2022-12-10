@@ -4,6 +4,7 @@ import WeatherIcon from './WeatherIcon';
 import { OpenWeatherAPIResponse } from '@/interfaces/openWeatherResponse.interface';
 import { LocationGeocodedAddress } from 'expo-location';
 import { roundTemp } from '@/utils/weather';
+import { Entypo } from '@expo/vector-icons';
 
 const Header = ({
   data,
@@ -17,12 +18,18 @@ const Header = ({
       <View style={style.header}>
         <View>
           <Text style={style.title}>{roundTemp(data.current.temp)}</Text>
-          {address && <Text style={style.location}>{address.city}</Text>}
+          {address && (
+            <View style={style.locationWrapper}>
+              <Text style={style.locationText}>{address.city}</Text>
+              <Entypo name="location-pin" size={22} color="#000" />
+            </View>
+          )}
         </View>
         <WeatherIcon
           width={200}
           height={200}
           icon={data.current.weather[0].icon}
+          showLottie
         />
       </View>
       <Text style={style.text}>
@@ -47,7 +54,11 @@ const style = StyleSheet.create({
     fontSize: 58,
     fontWeight: '400',
   },
-  location: {
+  locationWrapper: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  locationText: {
     fontWeight: '600',
     fontSize: 22,
   },
