@@ -10,7 +10,8 @@
       "@/config/*": ["src/config/*"],
       "@/interfaces/*": ["src/interfaces/*"],
       "@/redux/*": ["src/redux/*"],
-      "@/screens/*": ["src/screens/*"]
+      "@/screens/*": ["src/screens/*"],
+      "@/hooks/*": ["src/hooks/*"]
     }
   }
 }

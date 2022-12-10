@@ -17,6 +17,7 @@ module.exports = function (api) {
             '@/interfaces': './src/interfaces',
             '@/redux': './src/redux',
             '@/screens': './src/screens',
+            '@/hooks': './src/hooks',
           },
         },
       ],
