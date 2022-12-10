@@ -18,6 +18,7 @@ module.exports = function (api) {
             '@/redux': './src/redux',
             '@/screens': './src/screens',
             '@/hooks': './src/hooks',
+            '@/utils': './src/utils',
           },
         },
       ],

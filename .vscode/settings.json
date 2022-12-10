@@ -4,8 +4,5 @@
   "editor.formatOnPaste": false,
   "prettier.useEditorConfig": false,
   "prettier.useTabs": false,
-  "prettier.configPath": ".prettierrc.json",
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  }
+  "prettier.configPath": ".prettierrc.json"
 }

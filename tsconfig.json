@@ -11,7 +11,8 @@
       "@/interfaces/*": ["src/interfaces/*"],
       "@/redux/*": ["src/redux/*"],
       "@/screens/*": ["src/screens/*"],
-      "@/hooks/*": ["src/hooks/*"]
+      "@/hooks/*": ["src/hooks/*"],
+      "@/utils/*": ["src/utils/*"]
     }
   }
 }
