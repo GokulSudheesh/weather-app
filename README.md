@@ -1,4 +1,4 @@
-## React Native Tutorial
+## Weather App
 
 # Redux stuffs:
 
