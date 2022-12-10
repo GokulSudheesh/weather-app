@@ -6,8 +6,9 @@ import {
   StatusBar,
   ActivityIndicator,
 } from 'react-native';
+import Weather from '@/components/Header';
 import { useGetUserLocation } from '@/hooks/useGetUserLocation';
-import { useGetWeatherQuery } from '@/redux/services/openWeather';
+import { Units, useGetWeatherQuery } from '@/redux/services/openWeather';
 import { skipToken } from '@reduxjs/toolkit/dist/query';
 
 const HomeScreen = () => {
@@ -22,18 +23,17 @@ const HomeScreen = () => {
         ? {
             lat: location.coords.latitude,
             lon: location.coords.longitude,
+            units: Units.metric,
           }
         : skipToken
     );
   const isFetching = isWeatherFetching || isLocationFetching;
-  console.log(weatherData);
 
   return (
     <SafeAreaView style={style.container}>
       {isError && <Text>Permission to access location was denied</Text>}
       {isFetching && <ActivityIndicator size={100} animating={isFetching} />}
-      {!isFetching && location && <Text>{JSON.stringify(location)}</Text>}
-      {!isFetching && weatherData && <Text>{JSON.stringify(weatherData)}</Text>}
+      {!isFetching && weatherData && <Weather data={weatherData} />}
     </SafeAreaView>
   );
 };
