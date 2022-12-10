@@ -2,6 +2,7 @@ import { View, ScrollView, Text, StyleSheet } from 'react-native';
 import React from 'react';
 import Header from './Header';
 import HourlyTemp from './HourlyTemp';
+import DailyTemp from './DailyTemp';
 import { OpenWeatherAPIResponse } from '@/interfaces/openWeatherResponse.interface';
 import { LocationGeocodedAddress } from 'expo-location';
 
@@ -15,7 +16,8 @@ const Weather = ({
   return (
     <ScrollView style={style.container}>
       <Header data={data} address={address} />
-      <HourlyTemp data={data} />
+      <HourlyTemp data={data.hourly} />
+      <DailyTemp data={data.daily} />
     </ScrollView>
   );
 };

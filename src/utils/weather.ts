@@ -26,5 +26,12 @@ export const getOpenWeatherIcon = (icon: string) =>
 
 export const roundTemp = (temp: number): string => `${Math.round(temp)}°`;
 
-export const getRainProb = (prob?: number): string =>
-  prob ? `${prob * 100}%` : '0%';
+export const getRainProb = (prob?: number): string => {
+  // Sometimes may be in percentage sometimes may be in decimal
+  if (!prob) return '0%';
+  const length = (Math.log(prob) * Math.LOG10E + 1) | 0;
+  if (length === 2) {
+    return `${Math.round(prob)}%`;
+  }
+  return `${prob * 100}%`;
+};

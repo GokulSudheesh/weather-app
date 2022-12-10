@@ -23,7 +23,7 @@ const TempCard = ({ data }: { data: Current }) => {
   );
 };
 
-const HourlyTemp = ({ data }: { data: OpenWeatherAPIResponse }) => {
+const HourlyTemp = ({ data }: { data: Current[] }) => {
   const renderItem = ({ item }: { item: Current }) => {
     return <TempCard data={item} />;
   };
@@ -31,7 +31,7 @@ const HourlyTemp = ({ data }: { data: OpenWeatherAPIResponse }) => {
   return (
     <FlatList
       style={style.list}
-      data={data.hourly}
+      data={data}
       renderItem={renderItem}
       keyExtractor={(item, index) => index.toString()}
       showsVerticalScrollIndicator={false}
@@ -46,7 +46,7 @@ export default HourlyTemp;
 const style = StyleSheet.create({
   container: {},
   list: {
-    marginTop: 75,
+    marginTop: 50,
     paddingVertical: 20,
     backgroundColor: '#b0b0b0',
     borderRadius: 16,
@@ -57,7 +57,8 @@ const style = StyleSheet.create({
     marginHorizontal: 5,
   },
   tempText: {
-    fontSize: 16,
+    fontSize: 18,
+    fontWeight: '600',
   },
   rainDrop: {
     flexDirection: 'row',
