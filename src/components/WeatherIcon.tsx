@@ -2,11 +2,12 @@ import React from 'react';
 import { Image } from 'react-native';
 import LottieView from 'lottie-react-native';
 import { WeatherIconLotties, getOpenWeatherIcon } from '@/utils/weather';
+import { Icon } from '@/interfaces/openWeatherResponse.interface';
 
 interface WeatherIconProps {
   width: number;
   height: number;
-  icon: string;
+  icon: Icon;
 }
 
 const WeatherIcon = ({ width, height, icon }: WeatherIconProps) => {

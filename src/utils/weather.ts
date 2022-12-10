@@ -1,22 +1,24 @@
-export const WeatherIconLotties: Record<string, string> = {
-  '11d': require('@/assets/lotties/thunderstorm.json'),
-  '11n': require('@/assets/lotties/thunderstorm.json'),
-  '09d': require('@/assets/lotties/light-rain.json'),
-  '09n': require('@/assets/lotties/light-rain.json'),
-  '10d': require('@/assets/lotties/heavy-rain.json'),
-  '10n': require('@/assets/lotties/heavy-rain.json'),
-  '13d': require('@/assets/lotties/heavy-snow.json'),
-  '13n': require('@/assets/lotties/heavy-snow.json'),
-  '50d': require('@/assets/lotties/sand-dust.json'),
-  '50n': require('@/assets/lotties/sand-dust.json'),
-  '01d': require('@/assets/lotties/sunny.json'),
-  '01n': require('@/assets/lotties/clear-night.json'),
-  '02d': require('@/assets/lotties/cloudy.json'),
-  '02n': require('@/assets/lotties/cloudy-night.json'),
-  '03d': require('@/assets/lotties/overcast.json'),
-  '03n': require('@/assets/lotties/overcast.json'),
-  '04d': require('@/assets/lotties/overcast.json'),
-  '04n': require('@/assets/lotties/overcast.json'),
+import { Icon } from '@/interfaces/openWeatherResponse.interface';
+
+export const WeatherIconLotties: Record<Icon, string> = {
+  [Icon.The11D]: require('@/assets/lotties/thunderstorm.json'),
+  [Icon.The11N]: require('@/assets/lotties/thunderstorm.json'),
+  [Icon.The09D]: require('@/assets/lotties/light-rain.json'),
+  [Icon.The09N]: require('@/assets/lotties/light-rain.json'),
+  [Icon.The10D]: require('@/assets/lotties/heavy-rain.json'),
+  [Icon.The10N]: require('@/assets/lotties/heavy-rain.json'),
+  [Icon.The13D]: require('@/assets/lotties/heavy-snow.json'),
+  [Icon.The13N]: require('@/assets/lotties/heavy-snow.json'),
+  [Icon.The50D]: require('@/assets/lotties/sand-dust.json'),
+  [Icon.The50N]: require('@/assets/lotties/sand-dust.json'),
+  [Icon.The01D]: require('@/assets/lotties/sunny.json'),
+  [Icon.The01N]: require('@/assets/lotties/clear-night.json'),
+  [Icon.The02D]: require('@/assets/lotties/cloudy.json'),
+  [Icon.The02N]: require('@/assets/lotties/cloudy-night.json'),
+  [Icon.The03D]: require('@/assets/lotties/overcast.json'),
+  [Icon.The03N]: require('@/assets/lotties/overcast.json'),
+  [Icon.The04D]: require('@/assets/lotties/overcast.json'),
+  [Icon.The04N]: require('@/assets/lotties/overcast.json'),
 };
 
 export const getOpenWeatherIcon = (icon: string) =>
