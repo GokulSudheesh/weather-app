@@ -1,5 +1,9 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
-import { OPENWEATHERMAP_BASE_URL, OPENWEATHERMAP_API_KEY } from '@env';
+import { OPENWEATHERMAP_API_KEY } from '@env';
+import {
+  OPENWEATHERMAP_API_DOMAIN,
+  OPENWEATHERMAP_END_POINT,
+} from '@/constants/config';
 import { OpenWeatherAPIResponse } from '@/interfaces/openWeatherResponse.interface';
 
 export enum Units {
@@ -10,7 +14,9 @@ export enum Units {
 // Define a service using a base URL and expected endpoints
 export const openWeatherApi = createApi({
   reducerPath: 'openWeatherApi',
-  baseQuery: fetchBaseQuery({ baseUrl: OPENWEATHERMAP_BASE_URL }),
+  baseQuery: fetchBaseQuery({
+    baseUrl: `${OPENWEATHERMAP_API_DOMAIN}${OPENWEATHERMAP_END_POINT}`,
+  }),
   endpoints: (builder) => ({
     getWeather: builder.query<
       OpenWeatherAPIResponse,
